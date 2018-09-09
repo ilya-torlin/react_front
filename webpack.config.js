@@ -15,11 +15,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ["@babel/preset-react"]
+                        }
+                    }
+                ],
             },
             {
                 test: /\.html$/,
@@ -32,11 +44,18 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
             }
         ]
     },
     plugins: [htmlPlugin],
     devServer: {
         hot: true
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     }
 };
