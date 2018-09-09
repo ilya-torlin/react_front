@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Fedra Sans Alt Pro Book';
+    src: url(../fonts/FedraSansAltPro-Book.woff) format('woff'), url(../fonts/FedraSansAltPro-Book.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 700
+}
+
+@font-face {
+    font-family: 'Fedra Sans Alt Pro Medium';
+    src: url(../fonts/FedraSansAltPro-Medium.woff) format('woff'), url(../fonts/FedraSansAltPro-Medium.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 700
+}
+
+@font-face {
+    font-family: 'Fedra Sans Pro Light';
+    src: url(../fonts/FedraSansPro-Light.woff) format('woff'), url(../fonts/FedraSansPro-Light.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 200
+}
+
+@font-face {
+    font-family: icomoon;
+    src: url(../fonts/icomoon.woff) format('woff'), url(../fonts/icomoon.ttf) format('truetype');
+    font-style: normal;
+    font-weight: 400
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url(../fonts/roboto-regular.woff) format('woff'), url(../fonts/roboto-regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url(../fonts/roboto-medium.woff) format('woff'), url(../fonts/roboto-medium.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url(../fonts/roboto-light.woff) format('woff'), url(../fonts/roboto-light.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+}
