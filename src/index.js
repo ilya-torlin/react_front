@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import FormContainer from "./js/components/container/FormContainer";
+
+import App from './js/components/container/App';
 import ReactDOM from "react-dom";
 import React from "react";
 
-const wrapper = document.getElementById("create-article-form");
-wrapper ? ReactDOM.render(<FormContainer />, wrapper) : false;
+const wrapper = document.getElementById("app-container");
+wrapper ? ReactDOM.render(<App />, wrapper) : false;
