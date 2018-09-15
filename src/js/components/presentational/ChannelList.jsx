@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import Channel from './Channel';
 
 class ChannelList extends Component{
+    constructor(props) {
+        super(props);
+
+        this.state = {};
+
+    }
     render() {
+        console.log(this.props);
         return (
             <React.Fragment>
-                <Channel />
-                <Channel />
-                <Channel />
-                <Channel />
-                <Channel />
-                <Channel />
-                <Channel />
+                {this.props.channels.map( channel => <Channel key={channel.channel.id} channel={channel.channel} programms={channel.programms} />)}
             </React.Fragment>
         );
     }
