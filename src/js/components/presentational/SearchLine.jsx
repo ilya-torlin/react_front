@@ -9,7 +9,10 @@ class SearchLine extends Component{
     }
 
     handleSwitchChange = (event) => {
-        const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        let value = event.target.checked;
+        if (!value)
+            value = +value;
+        console.log(event.target.checked,event.target.value);
         this.props.onHandlerSwitchChange(value, 'switchHD');
     }
 

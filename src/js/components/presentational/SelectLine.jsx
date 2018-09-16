@@ -4,22 +4,21 @@ import Select from 'react-select';
 class SelectLine extends Component{
 
     handlePackageChange = (newValue, {action}) => {
-        console.log(newValue, action);
         if (action === "clear")
             newValue =  { id: 0 };
-        this.props.onSelectPackageHandler(newValue, 'package');
+        this.props.onSelectHandler(newValue, 'package');
     };
 
     handleCategoryChange = (newValue, {action}) => {
         if (action === "clear")
             newValue =  { id: 0 };
-        this.props.onSelectCategoryHandler(newValue, 'category');
+        this.props.onSelectHandler(newValue, 'category');
     };
 
     handleGenreChange = (newValue, {action}) => {
         if (action === "clear")
             newValue =  { id: 0 };
-        this.props.onSelectGenreHandler(newValue, 'genre');
+        this.props.onSelectHandler(newValue, 'genre');
     };
 
     render(){

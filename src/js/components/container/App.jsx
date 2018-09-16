@@ -12,20 +12,27 @@ class App extends Component{
         channelList: [],
         genreList:[],
         categoryList:[],
-        packageList:[]
+        packageList:[],
+        filter: {
+            search: '',
+            date:'',
+            package: 0,
+            genre: 0,
+            category: 0,
+            switchHD: 0
+        },
     };
 
     constructor(props) {
         super(props);
 
-        this.initChannelsProgramms();
+        this.initChannelsProgramms(this.state.filter);
         this.initGenres();
         this.initCategories();
         this.initPackages();
     }
 
-    initChannelsProgramms(){
-        let payload = {};
+    initChannelsProgramms(payload){
         axios.get( this.API_URL + '/channelprogramm', {
             params: {
                 ...payload
@@ -36,7 +43,7 @@ class App extends Component{
                     let errorTxt = resp.data.data.msgClient;
                     console.log(`Ошибка при поиске пользователя по запросу '${this.findUserStr}'; ${errorTxt}`);
                 }else {
-                    console.log(resp.data.data);
+                    //console.log(resp.data.data);
                     this.setState({
                         channelList: resp.data.data.channels
                     });
@@ -133,6 +140,10 @@ class App extends Component{
 
     }
 
+    Filterhandler = (filter) => {
+        this.initChannelsProgramms(filter);
+    }
+
     render(){
         return (
             <div>
@@ -144,6 +155,7 @@ class App extends Component{
                         genres={this.state.genreList}
                         packages={this.state.packageList}
                         categories={this.state.categoryList}
+                        onFilterHandler={this.Filterhandler}
                     />
                 </div>
                 <div className="row m-2">
