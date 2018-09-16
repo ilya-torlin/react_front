@@ -7,7 +7,6 @@ class ChannelList extends Component{
     }
 
     render() {
-        console.log(this.props);
         return (
             <React.Fragment>
                 {this.props.channels.map( channel => <Channel key={channel.channel.id} channel={channel.channel} programms={channel.programms} />)}

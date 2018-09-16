@@ -1,35 +1,50 @@
 import React, { Component } from 'react';
 import '../../../css/Filter.css';
+import SeachLine from './SearchLine';
+import SelectLine from './SelectLine';
+
 
 class Filter extends Component{
+    state ={
+      filter: {
+          search: '',
+          package: 0,
+          genre: 0,
+          category: 0,
+          switchHD: false
+      },
+    };
+
+    SelectHandler = (value, key) => {
+        const filter = {...this.state.filter};
+        filter[key] = value.id;
+        this.setState({ filter });
+    }
+
+    InputHandler = (value, key) => {
+        const filter = {...this.state.filter};
+        filter[key] = value;
+        this.setState({ filter });
+    }
+
     render() {
         return (
             <React.Fragment>
                 <div className="col-lg-12">
-                    <div className="row">
-                        <div className="col-lg-8">
-                            <div className="input input__search_white-background">
-                                <div className="input__search-container">
-                                    <div className="input__search-magnifier"></div>
-                                    <input type="search" className="js-channelfiltermodel-title input__search" placeholder="Найти канал" />
-                                        <input type="submit" className="input__search-submit" value="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="input h-mr_50-desktop h-mt_7">
-                                <input type="checkbox" id="1499327512441" className="input__checkbox input__checkbox_switch js-show-hd" value="0" />
-                                    <label className="input__label h-display_block-mobile input__label_right" htmlFor="1499327512441">
-                                        <span className="input__label-text">
-                                            <div className="h-display_flex h-color_white h-flex-align-center h-mt_-3">
-                                                <span className="icon icon_tv_service-hd h-mr_5 h-fz_28-no-decrease"></span>
-                                                <span className="h-color_white">Только HD</span>
-                                            </div>
-                                        </span>
-                                    </label>
-                            </div>
-                        </div>
-                    </div>
+                    <SeachLine
+                        onHandlerInputChange={this.InputHandler}
+                        onHandlerSwitchChange={this.InputHandler}
+                    />
+                </div>
+                <div className={"col-lg-12"}>
+                    <SelectLine
+                        genres={this.props.genres}
+                        packages={this.props.packages}
+                        categories={this.props.categories}
+                        onSelectPackageHandler={this.SelectHandler}
+                        onSelectCategoryHandler={this.SelectHandler}
+                        onSelectGenreHandler={this.SelectHandler}
+                    />
                 </div>
                 <div className="col-lg-12">
                     <div className="tabs js-tabs h-align_left" id="js-program-dates" data-domain="perm"
