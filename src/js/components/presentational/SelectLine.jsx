@@ -24,7 +24,7 @@ class SelectLine extends Component{
     render(){
         return(
             <div className="row">
-                <div className="col-xs-12 col-lg-4 mb-3">
+                <div className="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
                     <Select
                         placeholder={"Пакеты каналов"}
                         options={this.props.packages}
@@ -34,7 +34,7 @@ class SelectLine extends Component{
                         onChange={this.handlePackageChange}
                     />
                 </div>
-                <div className="col-xs-12 col-lg-4 mb-3">
+                <div className="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
                     <Select
                         placeholder={"Категории каналов"}
                         options={this.props.categories}
@@ -44,7 +44,7 @@ class SelectLine extends Component{
                         onChange={this.handleCategoryChange}
                     />
                 </div>
-                <div className="col-xs-12 col-lg-4 mb-3">
+                <div className="col-12 col-sm-12 col-md-4 col-lg-4 mb-3">
                     <Select
                         placeholder={"Жанры передач"}
                         options={this.props.genres}

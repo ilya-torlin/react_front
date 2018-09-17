@@ -8,7 +8,10 @@ class ProgrammList extends Component{
         return (
             // state-opened - class for open
             <div className="tv-program-tile__list js-tv-program-tile__list">
-                {this.props.programms.map( programm => <Programm key={programm.id} programm={programm} />)}
+                { (this.props.programms)
+                    ? this.props.programms.map( programm => <Programm key={programm.id} programm={programm} />)
+                    : <h3>Нет расписания для текущей выборки</h3>
+                }
             </div>
         );
     }

@@ -13,13 +13,13 @@ class Filter extends Component{
           package: 0,
           genre: 0,
           category: 0,
-          switchHD: true
+          switchHD: 0
       },
       dates: [
-          { id:0, name: '01, пт', action: 'date', value: '2018-09-01', active: false},
+          { id:0, name: '01, пт', action: 'date', value: '2018-09-01', active: true},
           { id:1, name: '02, cб', action: 'date', value: '2018-09-02', active: false},
-          { id:2, name: 'сейчас', action: 'now', value: '', active: false},
-          { id:3, name: 'сегодня', action: 'date', value: '2018-09-03', active: true},
+          { id:2, name: 'сейчас', action: 'now', value: '2018-09-03', active: false},
+          { id:3, name: 'сегодня', action: 'date', value: '2018-09-03', active: false},
           { id:4, name: '04, пн', action: 'date', value: '2018-09-04', active: false},
       ]
     };
@@ -63,7 +63,8 @@ class Filter extends Component{
             resolve();
         })
         setStateSelect.then(() =>{
-
+            if (date.action === 'now')
+                console.log("Программы в данный момент");
             this.props.onFilterHandler(this.state.filter);
         })
     }

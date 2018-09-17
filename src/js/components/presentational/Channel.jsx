@@ -14,7 +14,7 @@ class Channel extends Component{
 
     render() {
         return (
-            <div className="col-md-4 col-sm-6 col-xs-12">
+            <div className="col-12 col-sm-12 col-md-6 col-lg-4 ">
                 <div className={"tv-program-tile js-tv-program-tile p-2 " + (this.state.isVisible ? "state-opened" : "")} >
                     <div className="tv-program-tile__inner-wrap js-tv-program-tile__inner-wrap">
                         <div className="tv-program-tile__header js-tv-program-tile__header">

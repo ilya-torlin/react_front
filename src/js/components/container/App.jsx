@@ -148,7 +148,7 @@ class App extends Component{
         return (
             <div>
                 <div className="row m-2">
-                    <h3 className="col-lg-12">Телепередачи</h3>
+                    <h3 className="col-12">Телепередачи</h3>
                 </div>
                 <div className="row m-2">
                     <Filter

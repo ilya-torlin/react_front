@@ -19,7 +19,7 @@ class SearchLine extends Component{
     render(){
       return (
           <div className="row">
-              <div className="col-lg-8">
+              <div className="col-12 col-sm-9 col-md-8 col-lg-8">
                   <div className="input input__search_white-background">
                       <div className="input__search-container">
                           <div className="input__search-magnifier"></div>
@@ -30,7 +30,7 @@ class SearchLine extends Component{
                       </div>
                   </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-12 col-sm-3 col-md-4 col-lg-4">
                   <div className="input h-mr_50-desktop h-mt_7">
                       <input
                           onChange={this.handleSwitchChange}
